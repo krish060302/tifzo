@@ -6,7 +6,7 @@ export default function Vision() {
           <div className='grid grid-cols-1 md:grid-cols-2 gap-8 items-center p-8 md:p-12'>
             <div>
               <img
-                src='/public/assets/vision_image.png'
+                src='/assets/vision_image.png'
                 alt='Our Vision'
                 className='w-full h-90 rounded-lg'
               />
