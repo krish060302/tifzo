@@ -4,7 +4,12 @@ import { useState } from 'react'
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-  const navLinks = ['Home', 'Services', 'About', 'Contact']
+  const navLinks = [
+    { name: 'Home', url: '/' },
+    { name: 'Services', url: '/services' },
+    { name: 'About', url: '/about' },
+    { name: 'Contact', url: '/contact' },
+  ]
 
   return (
     <header className='bg-white shadow-sm sticky top-0 z-50'>
@@ -19,11 +24,11 @@ export default function Header() {
           <nav className='hidden md:flex space-x-8'>
             {navLinks.map((link) => (
               <a
-                key={link}
-                href={`#${link.toLowerCase()}`}
+                key={link.name}
+                href={link.url}
                 className='text-gray-700 hover:text-blue-600 transition-colors font-medium'
               >
-                {link}
+                {link.name}
               </a>
             ))}
           </nav>
@@ -45,12 +50,12 @@ export default function Header() {
           <nav className='md:hidden pb-4'>
             {navLinks.map((link) => (
               <a
-                key={link}
-                href={`#${link.toLowerCase()}`}
+                key={link.name}
+                href={link.url}
                 className='block py-2 text-gray-700 hover:text-blue-600 transition-colors font-medium'
                 onClick={() => setIsMenuOpen(false)}
               >
-                {link}
+                {link.name}
               </a>
             ))}
           </nav>

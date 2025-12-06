@@ -29,7 +29,7 @@ export default function Footer() {
         <div className='grid md:grid-cols-4 gap-8 mb-8'>
           <div>
             <img
-              src='/assets/header_logo.png'
+              src='/assets/footer_logo.png'
               alt='tifzo logo'
               className='h-20 w-auto'
             />
