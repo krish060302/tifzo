@@ -1,18 +1,29 @@
 import { Instagram, Facebook, Linkedin, Twitter } from 'lucide-react'
 
-export default function Footer() {
+interface FooterProps {
+  onNavigate: (page: string) => void
+}
+
+export default function Footer({ onNavigate }: FooterProps) {
   const sections = [
     {
       title: 'Sections',
-      links: ['Home', 'About Us', 'Contact Us'],
+      links: [
+        { label: 'Home', action: () => onNavigate('home') },
+        { label: 'About Us', action: () => onNavigate('about') },
+        { label: 'Contact Us', action: () => onNavigate('home') },
+      ],
     },
     {
       title: 'Help',
-      links: ['Privacy', 'Help Center'],
+      links: [
+        { label: 'Privacy', action: () => {} },
+        { label: 'Help Center', action: () => {} },
+      ],
     },
     {
       title: 'Company Policies',
-      links: ['Terms & Conditions'],
+      links: [{ label: 'Terms & Conditions', action: () => {} }],
     },
   ]
 
@@ -28,11 +39,13 @@ export default function Footer() {
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
         <div className='grid md:grid-cols-4 gap-8 mb-8'>
           <div>
-            <img
-              src='/assets/footer_logo.png'
-              alt='tifzo logo'
-              className='h-20 w-auto'
-            />
+            <div className='text-2xl font-bold text-blue-600 mb-3'>
+              <img
+                src='/assets/footer_logo.png'
+                alt='tifzo logo'
+                className='h-20 w-auto'
+              />
+            </div>
             <p className='text-gray-600 text-sm mb-4'>
               Your food, delivered safely
             </p>
@@ -59,12 +72,12 @@ export default function Footer() {
               <ul className='space-y-2'>
                 {section.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
-                    <a
-                      href='#'
-                      className='text-gray-600 hover:text-blue-600 transition-colors text-sm'
+                    <button
+                      onClick={link.action}
+                      className='text-gray-600 hover:text-blue-600 transition-colors text-sm text-left'
                     >
-                      {link}
-                    </a>
+                      {link.label}
+                    </button>
                   </li>
                 ))}
               </ul>
