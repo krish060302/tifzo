@@ -5,6 +5,7 @@ import Services from './components/Services'
 import Advantages from './components/Advantages'
 import Vision from './components/Vision'
 import About from './components/About'
+import Contact from './components/Contact'
 import Footer from './components/Footer'
 
 function App() {
@@ -25,8 +26,10 @@ function App() {
           <Advantages />
           <Vision />
         </>
-      ) : (
+      ) : currentPage === 'about' ? (
         <About onNavigate={handleNavigation} />
+      ) : (
+        <Contact onNavigate={handleNavigation} />
       )}
       <Footer onNavigate={handleNavigation} />
     </div>

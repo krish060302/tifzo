@@ -11,7 +11,8 @@ export default function Footer({ onNavigate }: FooterProps) {
       links: [
         { label: 'Home', action: () => onNavigate('home') },
         { label: 'About Us', action: () => onNavigate('about') },
-        { label: 'Contact Us', action: () => onNavigate('home') },
+        { label: 'Contact Us', action: () => onNavigate('contact') },
+        { label: 'Become A Rider', action: () => onNavigate('home') },
       ],
     },
     {
@@ -41,7 +42,7 @@ export default function Footer({ onNavigate }: FooterProps) {
           <div>
             <div className='text-2xl font-bold text-blue-600 mb-3'>
               <img
-                src='/assets/footer_logo.png'
+                src='assets/footer_logo.png'
                 alt='tifzo logo'
                 className='h-20 w-auto'
               />

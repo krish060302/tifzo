@@ -50,18 +50,19 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
             >
               About
             </button>
-            <a
-              href='#services'
-              className='text-gray-700 hover:text-blue-600 transition-colors font-medium'
-            >
-              Services
-            </a>
-            <a
-              href='#contact'
-              className='text-gray-700 hover:text-blue-600 transition-colors font-medium'
+            <button
+              onClick={() => handleNavClick('contact')}
+              className={`font-medium transition-colors ${
+                currentPage === 'contact'
+                  ? 'text-blue-600'
+                  : 'text-gray-700 hover:text-blue-600'
+              }`}
             >
               Contact
-            </a>
+            </button>
+            <button className='bg-blue-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-blue-700 transition-colors'>
+              Become A Rider
+            </button>
           </nav>
 
           <button
@@ -99,20 +100,19 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
             >
               About
             </button>
-            <a
-              href='#services'
-              className='block py-2 text-gray-700 hover:text-blue-600 transition-colors font-medium'
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Services
-            </a>
-            <a
-              href='#contact'
-              className='block py-2 text-gray-700 hover:text-blue-600 transition-colors font-medium'
-              onClick={() => setIsMenuOpen(false)}
+            <button
+              onClick={() => handleNavClick('contact')}
+              className={`block w-full text-left py-2 font-medium transition-colors ${
+                currentPage === 'contact'
+                  ? 'text-blue-600'
+                  : 'text-gray-700 hover:text-blue-600'
+              }`}
             >
               Contact
-            </a>
+            </button>
+            <button className='block w-full text-left bg-blue-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-blue-700 transition-colors mt-2'>
+              Become A Rider
+            </button>
           </nav>
         )}
       </div>
