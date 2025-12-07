@@ -51,14 +51,14 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
               About
             </button>
             <button
-              onClick={() => handleNavClick('contact')}
+              onClick={() => handleNavClick('rate-calculator')}
               className={`font-medium transition-colors ${
-                currentPage === 'contact'
+                currentPage === 'rate-calculator'
                   ? 'text-blue-600'
                   : 'text-gray-700 hover:text-blue-600'
               }`}
             >
-              Contact
+              Rate Calculator
             </button>
             <button className='bg-blue-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-blue-700 transition-colors'>
               Become A Rider
@@ -101,14 +101,14 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
               About
             </button>
             <button
-              onClick={() => handleNavClick('contact')}
+              onClick={() => handleNavClick('rate-calculator')}
               className={`block w-full text-left py-2 font-medium transition-colors ${
-                currentPage === 'contact'
+                currentPage === 'rate-calculator'
                   ? 'text-blue-600'
                   : 'text-gray-700 hover:text-blue-600'
               }`}
             >
-              Contact
+              Rate Calculator
             </button>
             <button className='block w-full text-left bg-blue-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-blue-700 transition-colors mt-2'>
               Become A Rider

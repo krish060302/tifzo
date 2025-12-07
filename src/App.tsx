@@ -6,6 +6,7 @@ import Advantages from './components/Advantages'
 import Vision from './components/Vision'
 import About from './components/About'
 import Contact from './components/Contact'
+import RateCalculator from './components/RateCalculator'
 import Footer from './components/Footer'
 
 function App() {
@@ -28,8 +29,10 @@ function App() {
         </>
       ) : currentPage === 'about' ? (
         <About onNavigate={handleNavigation} />
-      ) : (
+      ) : currentPage === 'contact' ? (
         <Contact onNavigate={handleNavigation} />
+      ) : (
+        <RateCalculator onNavigate={handleNavigation} />
       )}
       <Footer onNavigate={handleNavigation} />
     </div>
